@@ -34,7 +34,6 @@ end
 
 gem "formtastic", "~> 2.2"
 gem 'formtastic-bootstrap'
-gem 'sass-rails'  
 gem 'acts_as_relation', '~> 1.0'
 
 # Use ActiveModel has_secure_password
