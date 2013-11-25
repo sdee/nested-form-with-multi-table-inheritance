@@ -1,4 +1,6 @@
 NestedFormWithMultiTableInheritance::Application.routes.draw do
+  resources :stores
+
   resources :pens
 
   resources :books
