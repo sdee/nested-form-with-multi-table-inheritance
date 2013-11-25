@@ -36,7 +36,7 @@ gem "formtastic", "~> 2.2"
 gem 'formtastic-bootstrap'
 gem 'acts_as_relation', '~> 1.0'
 gem 'mysql2'
-
+gem 'cocoon'
 gem "nifty-generators", :group => :development
 
 # Use ActiveModel has_secure_password
