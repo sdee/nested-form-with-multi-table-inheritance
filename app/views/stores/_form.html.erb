@@ -1,21 +1,16 @@
-<%= form_for(@store) do |f| %>
-  <% if @store.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@store.errors.count, "error") %> prohibited this store from being saved:</h2>
+<%= semantic_form_for @store do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :name %>
 
-      <ul>
-      <% @store.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+<h3>Books/h3>
+    <div id='books'>
+    <%= f.semantic_fields_for :books do |book| %>
+      <%= render 'book_fields', :f => book %>
+    <% end %>
+          <div class='links'>
+      <%= link_to_add_association 'add book', f, :books %>
+      </div>
+
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= f.actions :submit %>
 <% end %>
