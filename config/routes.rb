@@ -1,4 +1,8 @@
 NestedFormWithMultiTableInheritance::Application.routes.draw do
+  resources :pens
+
+  resources :books
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,4 +57,8 @@ NestedFormWithMultiTableInheritance::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+resources :books
+resources :pens
+
 end

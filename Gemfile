@@ -37,6 +37,8 @@ gem 'formtastic-bootstrap'
 gem 'acts_as_relation', '~> 1.0'
 gem 'mysql2'
 
+gem "nifty-generators", :group => :development
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
@@ -48,3 +50,5 @@ gem 'mysql2'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem "mocha", group: :test

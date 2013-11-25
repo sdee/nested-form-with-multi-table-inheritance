@@ -1,0 +1,17 @@
+<%= form_for(@pen) do |f| %>
+  <% if @pen.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pen.errors.count, "error") %> prohibited this pen from being saved:</h2>
+
+      <ul>
+      <% @pen.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
