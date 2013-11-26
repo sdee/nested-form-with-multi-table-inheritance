@@ -2,7 +2,7 @@
   <%= f.inputs do %>
     <%= f.input :name %>
 
-<h3>Books/h3>
+<h3>Books</h3>
     <div id='books'>
     <%= f.semantic_fields_for :books do |book| %>
       <%= render 'book_fields', :f => book %>
