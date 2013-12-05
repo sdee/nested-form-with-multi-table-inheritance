@@ -52,3 +52,4 @@ gem "nifty-generators", :group => :development
 # gem 'debugger', group: [:development, :test]
 
 gem "mocha", group: :test
+gem 'pry', :group => :development

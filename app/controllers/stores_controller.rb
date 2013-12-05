@@ -15,6 +15,7 @@ class StoresController < ApplicationController
   # GET /stores/new
   def new
     @store = Store.new
+    @store.books.build
   end
 
   # GET /stores/1/edit
@@ -25,15 +26,17 @@ class StoresController < ApplicationController
   # POST /stores.json
   def create
     @store = Store.new(store_params)
+    @store.save
+    # @store.books.create(store_params["books_attributes"]["0"])
 
     respond_to do |format|
-      if @store.save
+      # if @store.save 
         format.html { redirect_to @store, notice: 'Store was successfully created.' }
         format.json { render action: 'show', status: :created, location: @store }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @store.errors, status: :unprocessable_entity }
-      end
+      # else
+      #   format.html { render action: 'new' }
+      #   format.json { render json: @store.errors, status: :unprocessable_entity }
+      # end
     end
   end
 
@@ -69,6 +72,6 @@ class StoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def store_params
-      params.require(:store).permit(:name)
+      params.require(:store).permit(:name, books_attributes: [:author])
     end
 end
